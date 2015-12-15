@@ -1,17 +1,36 @@
+/*
+Alvaro Rojas
+ */
+
 #import <Foundation/Foundation.h>
-#import <Cordova/CDV.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface AnalyticsPlugin : CDVPlugin
+@interface AnalyticsPlugin : CDVPlugin {
+    UIDevice *myDevice;
+}
 
-- (void)identify:(CDVInvokedUrlCommand*)command;
-- (void)group:(CDVInvokedUrlCommand*)command;
+- (void)init:(CDVInvokedUrlCommand*)command;
 - (void)track:(CDVInvokedUrlCommand*)command;
-- (void)screen:(CDVInvokedUrlCommand*)command;
 - (void)alias:(CDVInvokedUrlCommand*)command;
-- (void)reset:(CDVInvokedUrlCommand*)command;
-- (void)flush:(CDVInvokedUrlCommand*)command;
-- (void)enable:(CDVInvokedUrlCommand*)command;
-- (void)disable:(CDVInvokedUrlCommand*)command;
+- (void)peopleIncrement:(CDVInvokedUrlCommand*)command;
+- (void)peopleTrackCharge:(CDVInvokedUrlCommand*)command;
+- (void)peopleSet:(CDVInvokedUrlCommand*)command;
+- (void)getDeviceValues:(CDVInvokedUrlCommand*)command;
+
+
+
+//Get values from mobile devices
+- (NSString*)iOSAppRelease;
+- (NSString*)iOSDeviceUDID;
+- (NSString*)iOSDeviceName;
+- (NSString*)iOSDeviceSystemName;
+- (NSString*)iOSDeviceOSVersion;
+- (NSString*)iOSDeviceModel;
+- (NSString*)iOSCarrier;
+- (NSString*)iOSIfa;
+- (NSString*)iOSIfv;
+- (NSString*)iOSScreenWidth;
+- (NSString*)iOSScreenHeight;
+- (NSString*)iOSWiFiConnection;
 
 @end

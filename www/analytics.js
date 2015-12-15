@@ -1,85 +1,45 @@
+/**
+ * Created with JetBrains WebStorm.
+ * User: user
+ * Date: 1/17/14
+ * Time: 3:05 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
+cordova.define("cordova-plugin-segment.AnalyticsPlugin", function(require, exports, module) {
+
 var exec = require('cordova/exec');
 
-var analytics = {};
-
-analytics.identify = function() {
-  var args = Array.prototype.slice.call(arguments);
-
-  if (typeof args[0] !== 'string') {
-    args.unshift(null);
-  }
-
-  exec(null, null, 'AnalyticsPlugin', 'identify', getNArgs(args, 3));
+var AnalyticsPlugin = function() {
+    this.serviceName = "AnalyticsPlugin";
 };
 
-analytics.group = function() {
-  var args = Array.prototype.slice.call(arguments);
-
-  if (typeof args[0] !== 'string') {
-    args.unshift(null);
-  }
-
-  exec(null, null, 'AnalyticsPlugin', 'group', getNArgs(args, 3));
+AnalyticsPlugin.prototype.init = function(successCallback, failureCallback, mispanelToken) {
+    exec(successCallback, failureCallback, this.serviceName, "init", [ mispanelToken ]);
 };
 
-analytics.track = function() {
-  var args = Array.prototype.slice.call(arguments);
-
-  exec(null, null, 'AnalyticsPlugin', 'track', getNArgs(args, 3));
+AnalyticsPlugin.prototype.track = function(successCallback, failureCallback, events) {
+    exec(successCallback, failureCallback, this.serviceName, "track", events);
 };
 
-
-// alias `screen` as `page` for consistent with Analytics.js interface
-analytics.screen = analytics.page = function() {
-  var args = Array.prototype.slice.call(arguments);
-
-  if (typeof args[1] !== 'string') {
-    args.unshift(null);
-  }
-
-  exec(null, null, 'AnalyticsPlugin', 'screen', getNArgs(args, 4));
+AnalyticsPlugin.prototype.alias = function(successCallback, failureCallback, events) {
+    exec(successCallback, failureCallback, this.serviceName, "alias", events);
 };
 
-analytics.alias = function() {
-  var args = Array.prototype.slice.call(arguments);
-
-  exec(null, null, 'AnalyticsPlugin', 'alias', getNArgs(args, 2));
+AnalyticsPlugin.prototype.peopleIncrement = function(successCallback, failureCallback, events) {
+    exec(successCallback, failureCallback, this.serviceName, "peopleIncrement", events);
 };
 
-analytics.reset = function() {
-  exec(null, null, 'AnalyticsPlugin', 'reset', []);
+AnalyticsPlugin.prototype.peopleTrackCharge = function(successCallback, failureCallback, events) {
+    exec(successCallback, failureCallback, this.serviceName, "peopleTrackCharge", events);
 };
 
-analytics.flush = function() {
-  exec(null, null, 'AnalyticsPlugin', 'flush', []);
+AnalyticsPlugin.prototype.peopleSet = function(successCallback, failureCallback, events) {
+    exec(successCallback, failureCallback, this.serviceName, "peopleSet", events);
 };
-
-// iOS only
-analytics.enable = function() {
-  exec(null, null, 'AnalyticsPlugin', 'enable', []);
+AnalyticsPlugin.prototype.getDeviceValues = function(successCallback, failureCallback, events) {
+    exec(successCallback, failureCallback, this.serviceName, "getDeviceValues", events);
 };
+module.exports = AnalyticsPlugin;
 
-// iOS only
-analytics.disable = function() {
-  exec(null, null, 'AnalyticsPlugin', 'disable', []);
-};
-
-// android only
-analytics.getSnapshot = function(callbackFn) {
-  exec(function(result) {
-    callbackFn(result);
-  }, null, 'AnalyticsPlugin', 'getSnapshot', []);
-};
-
-function getNArgs(args, n) {
-  var result = [];
-  args = args || [];
-
-  for (var i = 0; i < n; i++) {
-    result[i] = args[i] === undefined ? null : args[i];
-  }
-
-  return result;
-}
-
-module.exports = analytics;
+});
