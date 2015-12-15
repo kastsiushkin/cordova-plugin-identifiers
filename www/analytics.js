@@ -5,9 +5,6 @@
  * Time: 3:05 PM
  * To change this template use File | Settings | File Templates.
  */
-
-cordova.define("cordova-plugin-segment.AnalyticsPlugin", function(require, exports, module) {
-
 var exec = require('cordova/exec');
 
 var AnalyticsPlugin = function() {
@@ -41,5 +38,3 @@ AnalyticsPlugin.prototype.getDeviceValues = function(successCallback, failureCal
     exec(successCallback, failureCallback, this.serviceName, "getDeviceValues", events);
 };
 module.exports = AnalyticsPlugin;
-
-});
