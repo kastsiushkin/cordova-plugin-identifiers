@@ -10,7 +10,7 @@ IdentifiersPlugin.prototype.getIDFA = function (success, failure) {
 
 IdentifiersPlugin.prototype.getIDFV = function(success, failure) {
   exec(success, failure, "IdentifiersPlugin", "getIDFV", []);
-},
+};
 
 var identifiers = new IdentifiersPlugin();
 
