@@ -7,8 +7,10 @@
 */
 var exec = require('cordova/exec');
 
-var getIDFA = function (success, failure) {
-  exec(success, failure, "CDVIdfa", "advertisingIdentifier", []);
+var IdentifiersPlugin = {};
+
+IdentifiersPlugin.prototype.getIDFA = function (success, failure) {
+  exec(success, failure, "identifiers", "advertisingIdentifier", []);
 };
 
 module.exports = IdentifiersPlugin;
