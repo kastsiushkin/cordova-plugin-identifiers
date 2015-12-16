@@ -1,4 +1,5 @@
 #import "IdentifiersPlugin.h"
+#import "AppleAdvertising.h"
 #import <AdSupport/ASIdentifierManager.h>
 
 @implementation IdentifiersPlugin
@@ -28,6 +29,28 @@
     *aid = @"No Advertising Identifier for device";
     return -1;
   }
+}
+
+- (void)getIDFV:(CDVInvokedUrlCommand*)command
+{
+    [self.commandDelegate runInBackground:^{
+        CDVPluginResult* pluginResult = nil;
+
+        // throw error if on iOS < 6.0
+        if (NSClassFromString(@"ASIdentifierManager")) {
+
+            NSString *vendorID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:vendorID];
+        }
+
+        else {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+        }
+
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+    }];
 }
 
 @end
