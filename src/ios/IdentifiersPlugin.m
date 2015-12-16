@@ -39,7 +39,7 @@
         // throw error if on iOS < 6.0
         if (NSClassFromString(@"ASIdentifierManager")) {
 
-            NSString *vendorID = [[[ASIdentifierManager sharedManager] identifierForVendor] UUIDString];
+            NSString *vendorID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
 
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:vendorID];
         }

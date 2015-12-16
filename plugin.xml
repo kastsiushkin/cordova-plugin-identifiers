@@ -27,6 +27,8 @@
             </feature>
         </config-file>
 
+        <framework src="AdSupport.framework" weak="true" />
+
         <header-file src="src/ios/IdentifiersPlugin.h" />
         <source-file src="src/ios/IdentifiersPlugin.m" />
     </platform>
