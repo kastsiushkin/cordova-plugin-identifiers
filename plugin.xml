@@ -17,7 +17,6 @@
 
     <js-module name="identifiers" src="www/identifiers.js">
         <clobbers target="identifiers" />
-        <clobbers target="window.identifiers" />
     </js-module>
 
     <platform name="android">
