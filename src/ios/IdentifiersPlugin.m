@@ -31,7 +31,7 @@
   }
 }
 
-- (void)getIDFV:(CDVInvokedUrlCommand*)command
+- (void) getIDFV:(CDVInvokedUrlCommand*)command
 {
     [self.commandDelegate runInBackground:^{
         CDVPluginResult* pluginResult = nil;
@@ -39,7 +39,7 @@
         // throw error if on iOS < 6.0
         if (NSClassFromString(@"ASIdentifierManager")) {
 
-            NSString *vendorID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+            NSString *vendorID = [[[ASIdentifierManager sharedManager] identifierForVendor] UUIDString];
 
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:vendorID];
         }
