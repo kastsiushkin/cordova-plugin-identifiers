@@ -19,6 +19,18 @@
         <clobbers target="window.identifiers" />
     </js-module>
 
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="IdentifiersPlugin">
+                <param name="ios-package" value="identifiers" />
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/IdentifiersPlugin.h" />
+        <source-file src="src/ios/IdentifiersPlugin.m" />
+    </platform>
+
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="IdentifiersPlugin">
@@ -50,17 +62,5 @@
         <framework src="com.segment.analytics.android:analytics-core:+"/>
 
         <source-file src="src/android/IdentifiersPlugin.java" target-dir="src/com/identifiers/cordova"/>
-    </platform>
-
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="IdentifiersPlugin">
-                <param name="ios-package" value="IdentifiersPlugin" />
-                <param name="onload" value="true"/>
-            </feature>
-        </config-file>
-
-        <header-file src="src/ios/IdentifiersPlugin.h" />
-        <source-file src="src/ios/IdentifiersPlugin.m" />
     </platform>
 </plugin>
