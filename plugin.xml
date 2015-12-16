@@ -15,7 +15,7 @@
       <engine name="cordova-ios" version=">=3.0.0" />
     </engines>
 
-    <js-module name="identifiers" src="www/identifiers.js">
+    <js-module name="IdentifiersPlugin" src="www/identifiers.js">
         <clobbers target="window.identifiers" />
     </js-module>
 
