@@ -10,7 +10,6 @@
     "ecosystem:cordova",
     "cordova",
     "identifiers",
-    "analytics",
     "attribution"
   ],
   "author": "Anthony Liatsis <anthony.liatsis@gmail.com>",

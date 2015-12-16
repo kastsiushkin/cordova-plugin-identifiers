@@ -15,14 +15,14 @@
       <engine name="cordova-ios" version=">=3.0.0" />
     </engines>
 
-    <js-module name="analytics" src="www/identifiers.js">
+    <js-module name="identifiers" src="www/identifiers.js">
         <clobbers target="identifiers" />
         <clobbers target="window.identifiers" />
     </js-module>
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AnalyticsPlugin">
+            <feature name="IdentifiersPlugin">
                 <param name="android-package" value="com.identifiers.cordova.IdentifiersPlugin"/>
                 <param name="onload" value="true"/>
             </feature>
