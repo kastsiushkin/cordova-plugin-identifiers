@@ -1,12 +1,7 @@
-/*
-Alvaro Rojas
- */
-
 #import <Cordova/CDVPlugin.h>
 
-@interface AnalyticsPlugin : CDVPlugin {
-    UIDevice *myDevice;
-}
+@interface AnalyticsPlugin : CDVPlugin
 
-- (void)getDeviceValues:(CDVInvokedUrlCommand*)command;
+- (void) advertisingIdentifier:(CDVInvokedUrlCommand*)command;
+
 @end
