@@ -22,7 +22,7 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="IdentifiersPlugin">
-                <param name="ios-package" value="identifiers" />
+                <param name="ios-package" value="IdentifiersPlugin" />
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
