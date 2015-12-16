@@ -9,12 +9,6 @@ Alvaro Rojas
     UIDevice *myDevice;
 }
 
-- (void)init:(CDVInvokedUrlCommand*)command;
-- (void)track:(CDVInvokedUrlCommand*)command;
-- (void)alias:(CDVInvokedUrlCommand*)command;
-- (void)peopleIncrement:(CDVInvokedUrlCommand*)command;
-- (void)peopleTrackCharge:(CDVInvokedUrlCommand*)command;
-- (void)peopleSet:(CDVInvokedUrlCommand*)command;
 - (void)getDeviceValues:(CDVInvokedUrlCommand*)command;
 
 
