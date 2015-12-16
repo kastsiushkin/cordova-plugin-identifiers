@@ -1,3 +1,4 @@
+#import <AdSupport/ASIdentifierManager.h>
 #import <Cordova/CDVPlugin.h>
 
 @interface IdentifiersPlugin : CDVPlugin

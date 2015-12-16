@@ -1,5 +1,4 @@
 #import "IdentifiersPlugin.h"
-#import <AdSupport/ASIdentifierManager.h>
 
 @implementation IdentifiersPlugin
 
