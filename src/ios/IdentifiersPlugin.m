@@ -1,5 +1,4 @@
 #import "IdentifiersPlugin.h"
-#import "AppleAdvertising.h"
 #import <AdSupport/ASIdentifierManager.h>
 
 @implementation IdentifiersPlugin
@@ -33,7 +32,7 @@
 
 - (void) getIDFV:(CDVInvokedUrlCommand*)command
 {
-    
+
 }
 
 @end
