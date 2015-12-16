@@ -9,7 +9,7 @@ var exec = require('cordova/exec');
 
 var identifiers = {};
 
-identifiers.prototype.getIDFA = function (success, failure) {
+identifiers.getIDFA = function (success, failure) {
   exec(success, failure, "IdentifiersPlugin", "advertisingIdentifier", []);
 };
 
