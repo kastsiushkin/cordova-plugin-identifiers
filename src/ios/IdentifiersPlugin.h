@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface AnalyticsPlugin : CDVPlugin
+@interface IdentifiersPlugin : CDVPlugin
 
 - (void) advertisingIdentifier:(CDVInvokedUrlCommand*)command;
 

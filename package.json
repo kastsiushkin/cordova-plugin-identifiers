@@ -1,7 +1,7 @@
 {
-  "name": "cordova-plugin-segment",
+  "name": "cordova-plugin-identifiers",
   "version": "0.1.0",
-  "description": "Cordova plugin for Segment Analytics",
+  "description": "Cordova plugin for Identifiers",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aliatsis/cordova-plugin-segment.git"
@@ -9,7 +9,7 @@
   "keywords": [
     "ecosystem:cordova",
     "cordova",
-    "segment",
+    "identifiers",
     "analytics",
     "attribution"
   ],

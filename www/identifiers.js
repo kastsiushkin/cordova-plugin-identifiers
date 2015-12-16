@@ -11,4 +11,4 @@ var getIDFA = function (success, failure) {
   exec(success, failure, "CDVIdfa", "advertisingIdentifier", []);
 };
 
-module.exports = AnalyticsPlugin;
+module.exports = IdentifiersPlugin;

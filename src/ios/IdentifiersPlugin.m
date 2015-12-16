@@ -1,7 +1,7 @@
 #import "AnalyticsPlugin.h"
 #import <AdSupport/ASIdentifierManager.h>
 
-@implementation AnalyticsPlugin
+@implementation IdentifiersPlugin
 
 - (void) advertisingIdentifier:(CDVInvokedUrlCommand*)command {
   NSString *result = nil;
