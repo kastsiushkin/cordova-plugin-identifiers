@@ -2,7 +2,7 @@ package com.identifiers.cordova;
 
 import java.util.TimeZone;
 
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+// import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -41,9 +41,9 @@ public class IdentifiersPlugin extends CordovaPlugin {
     }
 
     public String getAdid() {
-        AdvertisingIdClient.Info advId;
-        advId = AdvertisingIdClient.getAdvertisingIdInfo(cordova.getActivity());
-        return advId;
+        // AdvertisingIdClient.Info advId;
+        // advId = AdvertisingIdClient.getAdvertisingIdInfo(cordova.getActivity());
+        return "test";
     }
 
 }
