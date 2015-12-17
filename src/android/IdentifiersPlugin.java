@@ -15,13 +15,16 @@ import android.provider.Settings;
 
 public class IdentifiersPlugin extends CordovaPlugin {
 
-  static String GET_IDFA = "getIDFA";
+  static String GET_DEVICE_VALUES = "getDeviceValues";
 
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals(GET_IDFA)) {
+        if (action.equals(GET_DEVICE_VALUES)) {
             try {
-                PluginResult res = new PluginResult(PluginResult.Status.OK, this.getUuid());
+                JSONObject jsonIdentifiers = new JSONObject();
+                jsonIdentifiers.put('android_id', this.getUuid())
+
+                PluginResult res = new PluginResult(PluginResult.Status.OK, jsonDevice);
                 callbackContext.sendPluginResult(res);
             }catch (Exception e) {
                 e.printStackTrace();

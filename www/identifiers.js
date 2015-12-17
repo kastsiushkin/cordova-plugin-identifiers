@@ -4,12 +4,8 @@ var IdentifiersPlugin = function() {
   this.serviceName = 'IdentifiersPlugin';
 };
 
-IdentifiersPlugin.prototype.getIDFA = function (success, failure) {
-  exec(success, failure, this.serviceName, "getIDFA", []);
-};
-
-IdentifiersPlugin.prototype.getIDFV = function(success, failure) {
-  exec(success, failure, this.serviceName, "getIDFV", []);
+IdentifiersPlugin.prototype.getDeviceValues = function (success, failure) {
+  exec(success, failure, this.serviceName, "getDeviceValues", []);
 };
 
 var identifiers = new IdentifiersPlugin();

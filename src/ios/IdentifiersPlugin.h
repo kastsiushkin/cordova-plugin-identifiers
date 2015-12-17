@@ -3,7 +3,6 @@
 
 @interface IdentifiersPlugin : CDVPlugin
 
-- (void) getIDFA:(CDVInvokedUrlCommand*)command;
-- (void) getIDFV:(CDVInvokedUrlCommand*)command;
+- (void) getDeviceValues:(CDVInvokedUrlCommand*)command;
 
 @end
