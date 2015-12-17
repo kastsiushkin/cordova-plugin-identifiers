@@ -22,4 +22,8 @@
   return [self validateString:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
 }
 
+- (NSString*)validateString:(NSString*)str {
+    return str == nil? @"":str;
+}
+
 @end
