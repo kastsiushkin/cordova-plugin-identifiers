@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.provider.Settings;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 
 public class IdentifiersPlugin extends CordovaPlugin {
 
@@ -22,7 +23,8 @@ public class IdentifiersPlugin extends CordovaPlugin {
         if (action.equals(GET_DEVICE_VALUES)) {
             try {
                 JSONObject jsonIdentifiers = new JSONObject();
-                jsonIdentifiers.put("android_id", this.getUuid())
+                jsonIdentifiers.put("android_id", this.getUuid());
+                jsonIdentifiers.put("ad_id", this.getAdid());
 
                 PluginResult res = new PluginResult(PluginResult.Status.OK, jsonDevice);
                 callbackContext.sendPluginResult(res);
@@ -35,6 +37,12 @@ public class IdentifiersPlugin extends CordovaPlugin {
 
     public String getUuid() {
         String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+        return uuid;
+    }
+
+    public String getAdid() {
+        AdvertisingIdClient.Info advId;
+        advId = AdvertisingIdClient.getAdvertisingIdInfo(cordova.getActivity());
         return uuid;
     }
 

@@ -5,4 +5,7 @@
 
 - (void) getDeviceValues:(CDVInvokedUrlCommand*)command;
 
+- (NSString*)getIDFA;
+- (NSString*)getIDFV;
+
 @end
