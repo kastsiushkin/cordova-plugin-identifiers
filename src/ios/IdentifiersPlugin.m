@@ -17,7 +17,7 @@
 }
 
 - (int) getAdvertisingIdentifier:(NSString**)aid {
-  NSString *uuid = [[[ASIdentifierManager sharedManager] getAdvertisingIdentifier] UUIDString];
+  NSString *uuid = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 
   if (uuid) {
     *aid = uuid;
