@@ -22,7 +22,7 @@ public class IdentifiersPlugin extends CordovaPlugin {
         if (action.equals(GET_DEVICE_VALUES)) {
             try {
                 JSONObject jsonIdentifiers = new JSONObject();
-                jsonIdentifiers.put('android_id', this.getUuid())
+                jsonIdentifiers.put("android_id", this.getUuid())
 
                 PluginResult res = new PluginResult(PluginResult.Status.OK, jsonDevice);
                 callbackContext.sendPluginResult(res);
