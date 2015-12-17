@@ -13,16 +13,16 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (NSString*)getIdfa:(CDVInvokedUrlCommand*)command {
+- (NSString*)getIdfa(CDVInvokedUrlCommand*)command {
   NSString *uniqueString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
   return [self validateString:uniqueString];
 }
 
-- (NSString*)getIdfv:(CDVInvokedUrlCommand*)command {
+- (NSString*)getIdfv(CDVInvokedUrlCommand*)command {
   return [self validateString:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
 }
 
-- (NSString*)validateString:(NSString*)str {
+- (NSString*)validateString(NSString*)str {
     return str == nil? @"":str;
 }
 
