@@ -1,4 +1,3 @@
-#import <Foundation/Foundation.h>
 #import <AdSupport/ASIdentifierManager.h>
 #import <Cordova/CDVPlugin.h>
 

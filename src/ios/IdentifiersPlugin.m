@@ -1,10 +1,4 @@
 #import "IdentifiersPlugin.h"
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import <CoreTelephony/CTCarrier.h>
-#import <AdSupport/ASIdentifierManager.h>
-#import "CDVReachability.h"
-#include <sys/types.h>
-#include <sys/sysctl.h>
 
 @implementation IdentifiersPlugin
 
