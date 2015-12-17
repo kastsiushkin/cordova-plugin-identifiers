@@ -43,7 +43,7 @@ public class IdentifiersPlugin extends CordovaPlugin {
     public String getAdid() {
         AdvertisingIdClient.Info advId;
         advId = AdvertisingIdClient.getAdvertisingIdInfo(cordova.getActivity());
-        return uuid;
+        return advId;
     }
 
 }
