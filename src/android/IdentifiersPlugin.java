@@ -2,7 +2,11 @@ package com.identifiers.cordova;
 
 import java.util.TimeZone;
 
+import com.appfeel.cordova.analytics.CPGoogleAnalytics;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Logger.LogLevel;
+
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
