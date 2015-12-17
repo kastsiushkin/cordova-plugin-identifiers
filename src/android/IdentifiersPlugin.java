@@ -21,7 +21,7 @@ public class IdentifiersPlugin extends CordovaPlugin {
 
         if (action.equals(GET_IDFA)) {
             try {
-                PluginResult res = this.getUuid();
+                PluginResult res = new PluginResult(PluginResult.Status.OK, this.getUuid());
                 callbackContext.sendPluginResult(res);
             }catch (Exception e) {
                 e.printStackTrace();
