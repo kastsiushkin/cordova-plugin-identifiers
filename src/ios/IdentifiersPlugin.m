@@ -7,7 +7,7 @@
     CDVPluginResult* pluginResult = nil;
     NSDictionary *resultDevice = [[NSDictionary alloc] initWithObjectsAndKeys:
                                   [self getIDFA], @"idfa",
-                                  [self getIDFV], @"idfv"
+                                  [self getIDFV], @"idfv",
                                   nil];
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:resultDevice];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
