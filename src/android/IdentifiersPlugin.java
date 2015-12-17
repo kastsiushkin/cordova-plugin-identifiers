@@ -2,6 +2,7 @@ package com.identifiers.cordova;
 
 import java.util.TimeZone;
 
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -12,7 +13,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.provider.Settings;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 
 public class IdentifiersPlugin extends CordovaPlugin {
 
