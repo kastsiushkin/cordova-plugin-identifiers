@@ -3,7 +3,7 @@
 
 @interface IdentifiersPlugin : CDVPlugin
 
-- (void) advertisingIdentifier:(CDVInvokedUrlCommand*)command;
+- (void) getIDFA:(CDVInvokedUrlCommand*)command;
 - (void) getIDFV:(CDVInvokedUrlCommand*)command;
 
 @end

@@ -5,7 +5,7 @@ var IdentifiersPlugin = function() {
 };
 
 IdentifiersPlugin.prototype.getIDFA = function (success, failure) {
-  exec(success, failure, this.serviceName, "advertisingIdentifier", []);
+  exec(success, failure, this.serviceName, "getIDFA", []);
 };
 
 IdentifiersPlugin.prototype.getIDFV = function(success, failure) {

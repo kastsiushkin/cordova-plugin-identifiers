@@ -2,7 +2,7 @@
 
 @implementation IdentifiersPlugin
 
-- (void) advertisingIdentifier:(CDVInvokedUrlCommand*)command {
+- (void) getIDFA:(CDVInvokedUrlCommand*)command {
   NSString *result = nil;
   CDVPluginResult* pluginResult = nil;
 
@@ -17,7 +17,7 @@
 }
 
 - (int) getAdvertisingIdentifier:(NSString**)aid {
-  NSString *uuid = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+  NSString *uuid = [[[ASIdentifierManager sharedManager] getIDFA] UUIDString];
 
   if (uuid) {
     *aid = uuid;
