@@ -1,15 +1,15 @@
 var exec = require('cordova/exec');
 
-var IdentifiersPlugin = function() {};
-
-IdentifiersPlugin.serviceName = 'Identifiers';
+var IdentifiersPlugin = function() {
+  this.serviceName = 'IdentifiersPlugin';
+};
 
 IdentifiersPlugin.prototype.getIDFA = function (success, failure) {
-  exec(success, failure, "IdentifiersPlugin", "advertisingIdentifier", []);
+  exec(success, failure, this.serviceName, "advertisingIdentifier", []);
 };
 
 IdentifiersPlugin.prototype.getIDFV = function(success, failure) {
-  exec(success, failure, "IdentifiersPlugin", "getIDFV", []);
+  exec(success, failure, this.serviceName, "getIDFV", []);
 };
 
 var identifiers = new IdentifiersPlugin();
