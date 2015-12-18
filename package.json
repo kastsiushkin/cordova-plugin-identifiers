@@ -4,18 +4,17 @@
   "description": "Cordova plugin for Identifiers",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aliatsis/cordova-plugin-segment.git"
+    "url": "git+https://github.com/kastsiushkin/cordova-plugin-identifiers.git"
   },
   "keywords": [
     "ecosystem:cordova",
     "cordova",
-    "identifiers",
-    "attribution"
+    "identifiers"
   ],
-  "author": "Anthony Liatsis <anthony.liatsis@gmail.com>",
+  "author": "Sasha Kastsiushkin <sasha.kastsiushkin@thescore.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aliatsis/cordova-plugin-segment/issues"
+    "url": "https://github.com/kastsiushkin/cordova-plugin-segment/issues"
   },
-  "homepage": "https://github.com/aliatsis/cordova-plugin-segment#readme"
+  "homepage": "https://github.com/kastsiushkin/cordova-plugin-segment#readme"
 }
