@@ -60,9 +60,7 @@
         </config-file>
 
         <!-- <framework src="com.segment.analytics.android:analytics-core:+"/> -->
-        <framework src="com.google.android.gms:play-services-analytics:+" />
         <framework src="com.google.android.gms:play-services-ads:+" />
-        <!-- <dependency id="com.google.playservices@19.0.0" /> -->
 
         <source-file src="src/android/IdentifiersPlugin.java" target-dir="src/com/identifiers/cordova"/>
     </platform>
