@@ -11,7 +11,6 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import static java.lang.System.*;
 
 import android.provider.Settings;
 
@@ -38,7 +37,6 @@ public class IdentifiersPlugin extends CordovaPlugin {
 
   public String getUuid() {
     String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-    System.out.println("*********Android_id**********" + uuid);
     return uuid;
   }
 
@@ -46,7 +44,6 @@ public class IdentifiersPlugin extends CordovaPlugin {
     AdvertisingIdClient.Info advId;
     try {
       advId = AdvertisingIdClient.getAdvertisingIdInfo(this.cordova.getActivity());
-      System.out.println("*********AD_ID**********" + advId.getId());
     } catch (Exception e) {
       return e.getMessage();
     }
