@@ -20,30 +20,34 @@ public class IdentifiersPlugin extends CordovaPlugin {
 
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals(GET_DEVICE_VALUES)) {
-            try {
-                JSONObject jsonIdentifiers = new JSONObject();
-                jsonIdentifiers.put("android_id", this.getUuid());
-                jsonIdentifiers.put("ad_id", this.getAdid());
+    if (action.equals(GET_DEVICE_VALUES)) {
+      try {
+        JSONObject jsonIdentifiers = new JSONObject();
+        jsonIdentifiers.put("android_id", this.getUuid());
+        jsonIdentifiers.put("ad_id", this.getAdid(callbackContext));
 
-                PluginResult res = new PluginResult(PluginResult.Status.OK, jsonIdentifiers);
-                callbackContext.sendPluginResult(res);
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return true;
+        PluginResult res = new PluginResult(PluginResult.Status.OK, jsonIdentifiers);
+        callbackContext.sendPluginResult(res);
+      }catch (Exception e) {
+        e.printStackTrace();
+      }
     }
+    return true;
+  }
 
-    public String getUuid() {
-        String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-        return uuid;
-    }
+  public String getUuid() {
+    String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+    return uuid;
+  }
 
-    public String getAdid() throws IOException {
-        AdvertisingIdClient.Info advId;
-        advId = AdvertisingIdClient.getAdvertisingIdInfo(this.cordova.getActivity());
-        return advId.getId();
+  public String getAdid() {
+    AdvertisingIdClient.Info advId;
+    try {
+      advId = AdvertisingIdClient.getAdvertisingIdInfo(this.cordova.getActivity());
+    } catch (Exception e) {
+      return e.getMessage();
     }
+    return advId.getId();
+  }
 
 }
