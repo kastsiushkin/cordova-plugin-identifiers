@@ -40,7 +40,7 @@ public class IdentifiersPlugin extends CordovaPlugin {
         return uuid;
     }
 
-    public String getAdid() {
+    public String getAdid() throws IOException {
         AdvertisingIdClient.Info advId;
         advId = AdvertisingIdClient.getAdvertisingIdInfo(this.cordova.getActivity());
         return advId.getId();
