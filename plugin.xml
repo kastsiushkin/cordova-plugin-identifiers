@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-identifiers" version="0.0.2">
+    id="cordova-plugin-identifiers" version="0.0.1">
     <name>IdentifiersPlugin</name>
     <description>Cordova Plugin Identifiers</description>
     <license>MIT License</license>

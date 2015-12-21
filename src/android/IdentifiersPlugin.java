@@ -48,7 +48,7 @@ public class IdentifiersPlugin extends CordovaPlugin {
       advId = AdvertisingIdClient.getAdvertisingIdInfo(this.cordova.getActivity());
       adid = advId.getId();
     } catch (Exception e) {
-      // log(e.getMessage());
+      //log(e.getMessage());
     }
 
     return adid;
