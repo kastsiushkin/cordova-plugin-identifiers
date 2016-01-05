@@ -2,6 +2,11 @@ var exec = require('cordova/exec'),
 	channel = require('cordova/channel'),
 	utils = require('cordova/utils');
 
+channel.createSticky('onDeveiceValuesReady');
+// Tell cordova channel to wait on the CordovaInfoReady event
+channel.waitForInitialization('onDeveiceValuesReady');
+
+
 var IdentifiersPlugin = function() {
   this.serviceName = 'IdentifiersPlugin';
   this.values = null;
@@ -11,7 +16,7 @@ var IdentifiersPlugin = function() {
   channel.onCordovaReady.subscribe(function() {
         me.getDeviceValues(function(values) {
         	me.values = values;
-            channel.onCordovaInfoReady.fire();
+            channel.onDeveiceValuesReady.fire();
         },function(e) {
             me.available = false;
             utils.alert("[ERROR] Error initializing Cordova: " + e);
